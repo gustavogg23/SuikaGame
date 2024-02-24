@@ -114,13 +114,14 @@ public class MENU extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         VentanaJuego vJuego = new VentanaJuego();
-        vJuego.setLocationRelativeTo(null);
-        vJuego.setBackground(new Color(213, 137, 54));
         
         // Se agrega panel de juego
         GamePanel pj = new GamePanel();
+        pj.setBackground(new Color(213, 137, 54));
         vJuego.add(pj);
         vJuego.pack();
+        vJuego.setLocationRelativeTo(null);
+        vJuego.getContentPane().setBackground(new Color(213, 137, 54));
         vJuego.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -12,7 +12,6 @@ public class SuikaGame {
         menu.setResizable(false);
         menu.setBackground(new Color(213, 137, 54));
         menu.setLocationRelativeTo(null);
-        
         menu.setVisible(true);
     }
 }
