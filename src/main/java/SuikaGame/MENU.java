@@ -119,7 +119,6 @@ public class MENU extends javax.swing.JFrame {
         
         // Se agrega panel de juego
         GamePanel pj = new GamePanel();
-        pj.setBackground(new Color(213, 137, 54));
         vJuego.add(pj);
         vJuego.pack();
         vJuego.setVisible(true);
