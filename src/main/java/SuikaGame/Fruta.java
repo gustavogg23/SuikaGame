@@ -8,13 +8,15 @@ public class Fruta {
     // Atributos
     private int posX;
     private int posY;
+    private int diametro;
     private int velCaida;
     private Image imagen;
 
     // Método Constructor
-    public Fruta(int posX, int posY, int velCaida, String ruta) {
+    public Fruta(int posX, int posY, int diametro, int velCaida, String ruta) {
         this.posX = posX;
         this.posY = posY;
+        this.diametro = diametro;
         this.velCaida = velCaida;
         this.imagen = new ImageIcon(ruta).getImage();
     }
@@ -35,6 +37,14 @@ public class Fruta {
     public void setPosY(int posY) {
         this.posY = posY;
     }
+    
+    public int getDiametro() {
+        return diametro;
+    }
+    
+    public void setDiametro(int diametro) {
+        this.diametro = diametro;
+    }
 
     public int getVelCaida() {
         return velCaida;
@@ -51,6 +61,6 @@ public class Fruta {
     
     // Método para dibujar la fruta
     public void dibujarFruta(Graphics2D graficos2) {
-        graficos2.drawImage(imagen, posX, posY, null);
+        graficos2.drawImage(imagen, posX, posY, diametro, diametro, null);
     }
 }

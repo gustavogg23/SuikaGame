@@ -12,6 +12,8 @@ public class ManagerJuego {
     public static int yArriba;
     public static int yAbajo;
     
+    Lista frutas = new Lista();
+    
     public ManagerJuego() {
         
         // Se dibuja el contenedor de las frutas
