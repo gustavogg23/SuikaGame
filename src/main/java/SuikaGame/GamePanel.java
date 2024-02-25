@@ -4,6 +4,10 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class GamePanel extends JPanel implements Runnable{
@@ -12,6 +16,7 @@ public class GamePanel extends JPanel implements Runnable{
     final int FPS = 60;
     Thread hiloJuego;
     ManagerJuego managerJuego;
+    Image fondo = null;
     
     public GamePanel() {
         this.setPreferredSize(new Dimension(ANCHO, ALTO));
@@ -19,6 +24,12 @@ public class GamePanel extends JPanel implements Runnable{
         this.setLayout(null);
         
         managerJuego = new ManagerJuego();
+        
+        try {
+            fondo = ImageIO.read(new File("C:\\Users\\gusta\\Imágenes\\Sprites\\fondo2.jpeg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     public void iniciarJuego() {
@@ -56,6 +67,10 @@ public class GamePanel extends JPanel implements Runnable{
     @Override
     public void paintComponent(Graphics graficos) {
         super.paintComponents(graficos);
+        
+        if (fondo != null) {
+            graficos.drawImage(fondo, 0, 0, getWidth(), getHeight(), this);
+        }
         
         Graphics2D graficos2 = (Graphics2D)graficos;
         managerJuego.dibujar(graficos2);
