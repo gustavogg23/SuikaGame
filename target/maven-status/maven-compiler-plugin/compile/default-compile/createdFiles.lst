@@ -1,7 +1,3 @@
-SuikaGame\MENU$1.class
-SuikaGame\SuikaGame.class
-SuikaGame\VentanaJuego$1.class
-SuikaGame\MENU.class
-SuikaGame\VentanaJuego.class
 SuikaGame\GamePanel.class
-SuikaGame\MENU$2.class
+SuikaGame\ManagerJuego.class
+SuikaGame\SuikaGame.class
