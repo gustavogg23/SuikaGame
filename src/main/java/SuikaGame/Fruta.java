@@ -10,6 +10,7 @@ public class Fruta {
     private int posY;
     private int diametro;
     private int velCaida;
+    private String ruta;
     private Image imagen;
 
     // Método Constructor
@@ -18,6 +19,7 @@ public class Fruta {
         this.posY = posY;
         this.diametro = diametro;
         this.velCaida = velCaida;
+        this.ruta = ruta;
         this.imagen = new ImageIcon(ruta).getImage();
     }
 
@@ -52,6 +54,14 @@ public class Fruta {
 
     public void setVelCaida(int velCaida) {
         this.velCaida = velCaida;
+    }
+
+    public String getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(String ruta) {
+        this.ruta = ruta;
     }
     
     // Método para actualizar la posición de la fruta

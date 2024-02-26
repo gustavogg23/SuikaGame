@@ -36,4 +36,32 @@ public class Lista {
         }      
         tamano++; // Se incrementa el tamano de la lista
     }
+
+    // Método para obtener la cabeza de la lista
+    public Nodo getCabeza() {
+        return cabeza;
+    }
+    
+    // Método para eliminar una fruta de la lista
+    public void eliminar(Fruta valor) {
+        if (estaVacia()) { // Se verifica si la lista está vacía
+            return;
+        }
+        
+        if (cabeza.getValor().equals(valor)) {
+            cabeza = cabeza.getSiguiente();
+            tamano--;
+            return;
+        }
+        
+        Nodo actual = cabeza;
+        
+        while (actual.getSiguiente().getValor().equals(valor)) {
+            actual.setSiguiente(actual.getSiguiente().getSiguiente());
+            tamano--;
+            return;
+        }
+        
+        actual = actual.getSiguiente();
+    }
 }
