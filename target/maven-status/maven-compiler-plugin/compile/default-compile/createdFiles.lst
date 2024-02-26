@@ -1,3 +1,6 @@
-SuikaGame\GamePanel.class
 SuikaGame\ManagerJuego.class
 SuikaGame\SuikaGame.class
+SuikaGame\Lista.class
+SuikaGame\Nodo.class
+SuikaGame\GamePanel.class
+SuikaGame\Fruta.class

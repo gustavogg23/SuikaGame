@@ -32,5 +32,10 @@ public class ManagerJuego {
         graficos2.setColor(Color.yellow);
         graficos2.setStroke(new BasicStroke(4f));
         graficos2.drawRect(xIzquierda - 4, yArriba - 4, ANCHO + 8, ALTO + 8);
+        
+        // Dibujar cuadrado para mostrar la siguiente fruta a caer
+        int x = xIzquierda - 200;
+        int y = yArriba + 50;
+        graficos2.drawRect(x, y, 100, 100);
     }
 }
