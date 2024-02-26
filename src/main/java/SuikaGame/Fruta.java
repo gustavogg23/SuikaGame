@@ -1,6 +1,7 @@
 package SuikaGame;
 
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -10,7 +11,7 @@ public class Fruta {
     // Atributos
     public int posX;
     public int posY;
-    public static int diametro = 40;
+    public static int diametro = 30;
     private BufferedImage imagen; 
     public int contadorCaida = 0;
     public boolean colisionIzquierda;
@@ -56,14 +57,14 @@ public class Fruta {
             frutaActiva = false;
         }
         else {
+            
             if (contadorCaida == ManagerJuego.caidaFruta) {
                 if (colisionFondo == false) {
                     posY += diametro;
                     contadorCaida = 0;
                 }
             }
-        }
-        
+        }        
     }
     
     public void comprobarColision() {
@@ -89,11 +90,18 @@ public class Fruta {
     }
 
     public void dibujarFruta(Graphics2D graficos2) {
-        // Redimensionamos la imagen al tamaño del círculo
-        Image imagenEscalada = this.imagen.getScaledInstance(diametro, diametro, Image.SCALE_SMOOTH);
+    // Creamos una nueva imagen que será un círculo perfecto del tamaño correcto
+    BufferedImage imagenCircular = new BufferedImage(diametro, diametro, BufferedImage.TYPE_INT_ARGB);
+    Graphics2D g = imagenCircular.createGraphics();
 
-        // Dibujamos la imagen en el círculo
-        graficos2.drawImage(imagenEscalada, posX, posY, null);
-    }
+    // Dibujamos la imagen de la fruta dentro del círculo
+    g.setClip(new Ellipse2D.Float(0, 0, diametro, diametro));
+    g.drawImage(this.imagen, 0, 0, diametro, diametro, null);
+    g.dispose();
+
+    // Dibujamos la imagen circular en el círculo
+    graficos2.drawImage(imagenCircular, posX, posY, null);
+}
+
 }
 

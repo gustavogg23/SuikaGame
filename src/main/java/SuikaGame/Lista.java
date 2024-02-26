@@ -1,5 +1,7 @@
 package SuikaGame;
 
+import java.awt.Graphics2D;
+
 public class Lista {
     // Atributos
     private Nodo cabeza;
@@ -64,4 +66,15 @@ public class Lista {
         
         actual = actual.getSiguiente();
     }
+    
+//    public void dibujarFrutas(Graphics2D graficos2) {
+//    Nodo actual = cabeza; // Comenzamos desde la cabeza de la lista
+//
+//    while (actual != null) { // Mientras no lleguemos al final de la lista
+//        Fruta fruta = actual.getValor(); // Obtenemos la fruta del nodo actual
+//        fruta.dibujarFruta(graficos2); // Dibujamos la fruta
+//        actual = actual.getSiguiente(); // Avanzamos al siguiente nodo
+//    }
+//}
+
 }
