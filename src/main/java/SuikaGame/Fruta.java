@@ -11,7 +11,8 @@ public class Fruta {
     public int posX;
     public int posY;
     public static int diametro = 40;
-    private BufferedImage imagen;
+    private BufferedImage imagen; 
+    public int contadorCaida = 0;
 
     public Fruta(String rutaImagen) {
         try {
@@ -32,6 +33,12 @@ public class Fruta {
 
     public void actualizar() {
         // Actualizar la fruta aquí
+        contadorCaida++;
+        
+        if (contadorCaida == ManagerJuego.caidaFruta){
+           posY += diametro;
+           contadorCaida = 0;
+        }
     }
 
     public void dibujarFruta(Graphics2D graficos2) {

@@ -33,7 +33,7 @@ public class GamePanel extends JPanel implements Runnable{
     }
     
     public void iniciarJuego() {
-        hiloJuego = new Thread();
+        hiloJuego = new Thread(this);
         hiloJuego.start();
     }
 

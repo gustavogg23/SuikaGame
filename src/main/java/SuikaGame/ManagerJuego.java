@@ -8,15 +8,18 @@ public class ManagerJuego {
     
     // Atributos del contenedor de juego
     final int ANCHO = 360;
-    final int ALTO = 600;
+    final int ALTO = 500;
     public static int xIzquierda;
     public static int xDerecha;
     public static int yArriba;
     public static int yAbajo;
   
+    // Fruta
     Fruta fruta;
     final int posInicialX;
     final int posInicialY;
+    
+    public static int caidaFruta = 60; // Intervalo de caída de la fruta
     
     public ManagerJuego() {
         
@@ -41,7 +44,7 @@ public class ManagerJuego {
         // Dibujar contenedor
         graficos2.setColor(Color.yellow);
         graficos2.setStroke(new BasicStroke(4f));
-        graficos2.drawRect(xIzquierda - 4, yArriba - 4, ANCHO + 8, ALTO + 8);
+        graficos2.drawRect(xIzquierda - 4, yArriba + 40, ANCHO + 8, ALTO + 8);
         
         // Dibujar cuadrado para mostrar la siguiente fruta a caer
         int x = xIzquierda - 200;

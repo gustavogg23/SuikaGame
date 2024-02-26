@@ -2,7 +2,6 @@ package SuikaGame;
 
 import java.awt.Color;
 import javax.swing.JFrame;
-import org.jbox2d.collision.shapes.CircleShape;
 
 public class SuikaGame {
 
@@ -17,6 +16,8 @@ public class SuikaGame {
         ventana.add(panelJuego);
         ventana.pack();
         ventana.setLocationRelativeTo(null);
-        ventana.setVisible(true);        
+        ventana.setVisible(true);     
+        
+        panelJuego.iniciarJuego();
     }
 }
