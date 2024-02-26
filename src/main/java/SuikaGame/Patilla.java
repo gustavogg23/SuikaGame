@@ -4,7 +4,7 @@ public class Patilla extends Fruta{
     
     public Patilla(String rutaImagen) {
         super(rutaImagen);
-        diametro *= 6;
+        diametro *= 5;
     }
     
 }
