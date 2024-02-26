@@ -23,6 +23,10 @@ public class GamePanel extends JPanel implements Runnable{
         this.setBackground(new Color(213, 137, 54));
         this.setLayout(null);
         
+        // Se agregan los controles de juego
+        this.addKeyListener(new Controles());
+        this.setFocusable(true);
+        
         managerJuego = new ManagerJuego();
         
         try {

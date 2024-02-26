@@ -35,6 +35,16 @@ public class Fruta {
         // Actualizar la fruta aquí
         contadorCaida++;
         
+        // Mover la fruta
+        if (Controles.botonIzquierda) {
+            posX -= diametro;
+            Controles.botonIzquierda = false;
+        }
+        if (Controles.botonDerecha) {
+            posX += diametro;
+            Controles.botonDerecha = false;
+        }
+        
         if (contadorCaida == ManagerJuego.caidaFruta){
            posY += diametro;
            contadorCaida = 0;
