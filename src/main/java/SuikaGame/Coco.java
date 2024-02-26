@@ -4,7 +4,7 @@ public class Coco extends Fruta{
     
     public Coco(String rutaImagen) {
         super(rutaImagen);
-        diametro *= 3.8; 
+        diametro *= 3.2; 
     }
     
 }

@@ -4,7 +4,7 @@ public class Cereza extends Fruta {
     
     public Cereza(String rutaImagen) {
         super(rutaImagen);
-        diametro *= 2;
+        diametro *= 1.6;
     }
     
 }

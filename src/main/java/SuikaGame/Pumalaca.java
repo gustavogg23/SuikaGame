@@ -4,7 +4,7 @@ public class Pumalaca extends Fruta{
     
     public Pumalaca(String rutaImagen) {
         super(rutaImagen);
-        diametro *= 2.2;
+        diametro *= 1.8;
     }
     
 }
