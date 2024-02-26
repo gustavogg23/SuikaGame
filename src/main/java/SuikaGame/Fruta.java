@@ -1,76 +1,45 @@
 package SuikaGame;
 
-import java.awt.Graphics2D;
-import java.awt.Image;
-import javax.swing.ImageIcon;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 public class Fruta {
     // Atributos
-    private int posX;
-    private int posY;
-    private int diametro;
-    private int velCaida;
-    private String ruta;
-    private Image imagen;
+    public int posX;
+    public int posY;
+    public static int diametro = 40;
+    private BufferedImage imagen;
 
-    // Método Constructor
-    public Fruta(int posX, int posY, int diametro, int velCaida, String ruta) {
+    public Fruta(String rutaImagen) {
+        try {
+            this.imagen = ImageIO.read(new File(rutaImagen));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void establecerPosicion(int posX, int posY) {
         this.posX = posX;
         this.posY = posY;
-        this.diametro = diametro;
-        this.velCaida = velCaida;
-        this.ruta = ruta;
-        this.imagen = new ImageIcon(ruta).getImage();
     }
 
-    // Métodos Getters y Setters
-    public int getPosX() {
-        return posX;
+    public void actualizarPosicion(int posicion) {
+        // Actualizar la posición de la fruta aquí
     }
 
-    public void setPosX(int posX) {
-        this.posX = posX;
+    public void actualizar() {
+        // Actualizar la fruta aquí
     }
 
-    public int getPosY() {
-        return posY;
-    }
-
-    public void setPosY(int posY) {
-        this.posY = posY;
-    }
-    
-    public int getDiametro() {
-        return diametro;
-    }
-    
-    public void setDiametro(int diametro) {
-        this.diametro = diametro;
-    }
-
-    public int getVelCaida() {
-        return velCaida;
-    }
-
-    public void setVelCaida(int velCaida) {
-        this.velCaida = velCaida;
-    }
-
-    public String getRuta() {
-        return ruta;
-    }
-
-    public void setRuta(String ruta) {
-        this.ruta = ruta;
-    }
-    
-    // Método para actualizar la posición de la fruta
-    public void actualizarPos() {
-        posY += velCaida;
-    }
-    
-    // Método para dibujar la fruta
     public void dibujarFruta(Graphics2D graficos2) {
-        graficos2.drawImage(imagen, posX, posY, diametro, diametro, null);
+        // Redimensionamos la imagen al tamaño del círculo
+        Image imagenEscalada = this.imagen.getScaledInstance(diametro, diametro, Image.SCALE_SMOOTH);
+
+        // Dibujamos la imagen en el círculo
+        graficos2.drawImage(imagenEscalada, posX, posY, null);
     }
 }
+
