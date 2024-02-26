@@ -3,6 +3,7 @@ package SuikaGame;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.util.Random;
 
 public class ManagerJuego {
     
@@ -29,11 +30,35 @@ public class ManagerJuego {
         yArriba = 50;
         yAbajo = yArriba + ALTO;
         
-        fruta = new Datil("C:\\Users\\gusta\\Imágenes\\Sprites\\datil.png");
+        fruta = elegirFruta();
         posInicialX = xIzquierda + (ANCHO / 2) - fruta.diametro; // La fruta se crea en la mitad del eje horizontal del contenedor
         posInicialY = yArriba + fruta.diametro; // Y en la parte superior del contenedor
         
         fruta.establecerPosicion(posInicialX, posInicialY);
+    }
+    
+    // Método para elegir una fruta al azar
+    private Fruta elegirFruta() {
+        Fruta fruta = null;
+        int random = new Random().nextInt(5);
+        
+        if (random == 0) {
+            fruta = new Datil("C:\\Users\\gusta\\Imágenes\\Sprites\\datil.png");                                              
+        }
+        else if (random == 1) {
+            fruta = new Cotoperi("C:\\Users\\gusta\\Imágenes\\Sprites\\cotoperi.png");
+        }
+        else if (random == 2) {
+            fruta = new Mamey("C:\\Users\\gusta\\Imágenes\\Sprites\\mamey.png");
+        }
+        else if (random == 3) {
+            fruta = new Cereza("C:\\Users\\gusta\\Imágenes\\Sprites\\cereza.png");
+        }
+        else if (random == 4) {
+            fruta = new Pumalaca("C:\\Users\\gusta\\Imágenes\\Sprites\\pumalaca.png");
+        }
+        
+        return fruta;
     }
     
     public void actualizar() {
@@ -49,7 +74,7 @@ public class ManagerJuego {
         // Dibujar cuadrado para mostrar la siguiente fruta a caer
         int x = xIzquierda - 200;
         int y = yArriba + 50;
-        graficos2.drawRect(x, y, 100, 100);
+        graficos2.drawOval(x, y, 100, 100);
         
         // Se dibuja la fruta
         if (fruta != null) {
